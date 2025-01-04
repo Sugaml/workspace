@@ -8,4 +8,5 @@
     docs/
         index.md  # The documentation homepage.
         prometheus.md
+        logging.md
         ...       # Other markdown pages, images and other files.
