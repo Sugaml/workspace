@@ -2,7 +2,7 @@
 
 ### "Streamline Your Workflow with Sugam Workspace!"
 
-## Project layout
+## Project Layout
 
     mkdocs.yml    # The configuration file.
     docs/

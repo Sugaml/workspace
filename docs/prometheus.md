@@ -1,8 +1,6 @@
-# Kubernetes Monitoring
+# Monitoring
 
-## Metrics
-
-### Add Helm Repository
+## Add Helm Repository
 
 ```
 
@@ -11,7 +9,7 @@ helm repo update
 
 ```
 
-### Install Prometheus
+## Install Prometheus
 
 ```
 
