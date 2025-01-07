@@ -2,11 +2,4 @@
 
 ### "Streamline Your Workflow with Sugam Workspace!"
 
-## Project Layout
-
-    mkdocs.yml
-    docs/
-        index.md
-        kubernetes.md
-        prometheus.md
-        logging.md
+#### Sugam Workspace simplifies your reading documentation

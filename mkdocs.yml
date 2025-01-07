@@ -1,1 +1,83 @@
-site_name: Sugam Workspace
+# Project information
+site_name: Workspace
+site_url: https://sugaml.github.io/workspace/
+site_author: BabulalT
+site_description: >-
+  "Streamline Your Workflow with Sugam Workspace!"
+
+# Repository
+repo_name: sugaml/workspace
+repo_url:
+  https://github.com/sugaml/workspace
+  #
+# Navigation menu
+nav:
+  - Home:
+      - index.md
+      - Kubernetes: kubernetes/index.md
+      - Monitoring: kubernetes/prometheus.md
+      - Logging: kubernetes/logging.md
+extra_css:
+  - stylesheets/style.css
+# Configuration
+theme:
+  name: material
+  features:
+    - search.suggest
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant.prefetch
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - scheme: custom
+      primary: custom
+      accent: custom
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/logo.png
+  icon:
+    logo: logo
+  logo: assets/logo-inverse.svg
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://babulal.io
+    - icon: fontawesome/brands/github
+      link: https://babulal.com
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+
+highlightjs: true
+hljs_languages:
+  - go
+  - bash
+  - yaml
+
+# Copyright
+copyright: Copyright © 2023 Product of BabulalT. All Right Reserved.
