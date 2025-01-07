@@ -1,4 +1,4 @@
-# Loki and Promtail Setup
+# Loogging
 
 ### Using Helm Chart
 
