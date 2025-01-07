@@ -12,28 +12,28 @@
         <meta name="author" content="BabulalT">
       
       
-        <link rel="canonical" href="https://sugaml.github.io/workspace/kubernetes/">
+        <link rel="canonical" href="https://sugaml.github.io/workspace/kubernetes/prometheus/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="prometheus/">
+        <link rel="next" href="../logging/">
       
       
-      <link rel="icon" href="../assets/logo.png">
+      <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Kubernetes - Workspace</title>
+        <title>Monitoring - Workspace</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/style.css">
+      <link rel="stylesheet" href="../../stylesheets/style.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubernetes-troubleshooting" class="md-skip">
+        <a href="#monitoring" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Workspace" class="md-header__button md-logo" aria-label="Workspace" data-md-component="logo">
+    <a href="../.." title="Workspace" class="md-header__button md-logo" aria-label="Workspace" data-md-component="logo">
       
-  <img src="../assets/logo-inverse.svg" alt="logo">
+  <img src="../../assets/logo-inverse.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubernetes
+              Monitoring
             
           </span>
         </div>
@@ -237,7 +237,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href=".." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -272,9 +272,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Workspace" class="md-nav__button md-logo" aria-label="Workspace" data-md-component="logo">
+    <a href="../.." title="Workspace" class="md-nav__button md-logo" aria-label="Workspace" data-md-component="logo">
       
-  <img src="../assets/logo-inverse.svg" alt="logo">
+  <img src="../../assets/logo-inverse.svg" alt="logo">
 
     </a>
     Workspace
@@ -337,7 +337,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href=".." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -367,6 +367,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -383,7 +404,7 @@
           
   
   <span class="md-ellipsis">
-    Kubernetes
+    Monitoring
   </span>
   
 
@@ -394,7 +415,7 @@
         
   
   <span class="md-ellipsis">
-    Kubernetes
+    Monitoring
   </span>
   
 
@@ -416,109 +437,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inroduction" class="md-nav__link">
+  <a href="#add-helm-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Inroduction
+      Add Helm Repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-cluster-architecture" class="md-nav__link">
+  <a href="#install-prometheus" class="md-nav__link">
     <span class="md-ellipsis">
-      Kubernetes Cluster Architecture
+      Install Prometheus
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
+  <a href="#logging" class="md-nav__link">
     <span class="md-ellipsis">
-      Get Started
+      Logging
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install Kind
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-kubectl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install kubectl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-kind-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Kind Cluster
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-metrics-server-kubectl-top" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install Metrics Server (kubectl top)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Install Metrics Server (kubectl top)">
+    <nav class="md-nav" aria-label="Logging">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-deployment-manifest" class="md-nav__link">
+  <a href="#add-helm-repository_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Deployment Manifest
+      Add Helm Repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-service-manifest" class="md-nav__link">
+  <a href="#install-loki-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Service Manifest
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-metallb" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install MetalLB
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-subnet-mask" class="md-nav__link">
-    <span class="md-ellipsis">
-      View subnet-mask
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-meatllb-manifest" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create MeatlLB manifest
+      Install Loki Stack
     </span>
   </a>
   
@@ -530,30 +488,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-nginx-controller" class="md-nav__link">
+  <a href="#observablity" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Nginx-controller
+      Observablity
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Install Nginx-controller">
+    <nav class="md-nav" aria-label="Observablity">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#to-add-hosts-on-etchosts" class="md-nav__link">
+  <a href="#install-grafana-dashbaord" class="md-nav__link">
     <span class="md-ellipsis">
-      To add hosts on etc/hosts
+      Install Grafana Dashbaord
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alerting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alerting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-gchat-alert-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add gChat Alert Repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-ingress-manifest" class="md-nav__link">
+  <a href="#install-gchat-alert" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Ingress Manifest
+      Install gChat Alert
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -578,28 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prometheus/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="logging/" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,109 +641,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inroduction" class="md-nav__link">
+  <a href="#add-helm-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Inroduction
+      Add Helm Repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-cluster-architecture" class="md-nav__link">
+  <a href="#install-prometheus" class="md-nav__link">
     <span class="md-ellipsis">
-      Kubernetes Cluster Architecture
+      Install Prometheus
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
+  <a href="#logging" class="md-nav__link">
     <span class="md-ellipsis">
-      Get Started
+      Logging
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install Kind
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-kubectl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install kubectl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-kind-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Kind Cluster
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-metrics-server-kubectl-top" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install Metrics Server (kubectl top)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Install Metrics Server (kubectl top)">
+    <nav class="md-nav" aria-label="Logging">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-deployment-manifest" class="md-nav__link">
+  <a href="#add-helm-repository_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Deployment Manifest
+      Add Helm Repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-service-manifest" class="md-nav__link">
+  <a href="#install-loki-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Service Manifest
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-metallb" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install MetalLB
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-subnet-mask" class="md-nav__link">
-    <span class="md-ellipsis">
-      View subnet-mask
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-meatllb-manifest" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create MeatlLB manifest
+      Install Loki Stack
     </span>
   </a>
   
@@ -761,30 +692,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-nginx-controller" class="md-nav__link">
+  <a href="#observablity" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Nginx-controller
+      Observablity
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Install Nginx-controller">
+    <nav class="md-nav" aria-label="Observablity">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#to-add-hosts-on-etchosts" class="md-nav__link">
+  <a href="#install-grafana-dashbaord" class="md-nav__link">
     <span class="md-ellipsis">
-      To add hosts on etc/hosts
+      Install Grafana Dashbaord
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alerting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alerting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-gchat-alert-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add gChat Alert Repository
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-ingress-manifest" class="md-nav__link">
+  <a href="#install-gchat-alert" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Ingress Manifest
+      Install gChat Alert
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -808,7 +796,7 @@
                   
 
   
-    <a href="https://github.com/sugaml/workspace/edit/master/docs/kubernetes/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/sugaml/workspace/edit/master/docs/kubernetes/prometheus.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -817,173 +805,70 @@
     
       
     
-    <a href="https://github.com/sugaml/workspace/raw/master/docs/kubernetes/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/sugaml/workspace/raw/master/docs/kubernetes/prometheus.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="kubernetes-troubleshooting">Kubernetes Troubleshooting</h1>
-<h2 id="inroduction">Inroduction</h2>
-<p>Kubernetes troubleshooting is the process of identifying, diagnosing, and resolving issues in kubernetes cluster, nodes, pods, or containers.</p>
-<p><img alt="Kubernetes Architecture" src="./images/architecture.png" /> </p>
-<object data="http://yoursite.com/the.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="http://yoursite.com/the.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<h1 id="monitoring">Monitoring</h1>
+<h2 id="add-helm-repository">Add Helm Repository</h2>
+<pre><code>
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
 
-<h2 id="kubernetes-cluster-architecture">Kubernetes Cluster Architecture</h2>
-<p><img alt="Kubernetes Architecture" src="./images/architecture.png" /> </p>
-<p>Each Kubernetes cluster is composed of:</p>
-<ol>
-<li>
-<p><strong>Nodes</strong></p>
-<p>Represent a physical or virtual machine with the container runtime to support one or more containers. Nodes in an operating cluster can be categorized into:
-* <strong>Master node</strong></p>
-<p>Hosts the cluster’s control plane and is responsible for scheduling workloads, scaling, and managing the cluster state. Each cluster must have at least one master node; however, a typical choice is to provision two or more master nodes for redundancy.</p>
-<ul>
-<li><strong>Worker node</strong></li>
-</ul>
-<p>Hosts workloads in containers and performs the duties assigned to it by the master node.‍</p>
-</li>
-<li>
-<p><strong>Control plane</strong></p>
-<p>Composed of a number of cluster components, it’s responsible for controlling the cluster to achieve a desired state.‍</p>
-</li>
-<li>
-<p><strong>Kube-API server</strong></p>
-<p>The front-end server that manages all external communication with the cluster.‍</p>
-</li>
-<li>
-<p><strong>Etcd</strong></p>
-<p>The key value database that stores cluster state and data.‍</p>
-</li>
-<li>
-<p><strong>Kube-scheduler</strong></p>
-<p>Uses etcd event data to schedule workloads on worker nodes.‍</p>
-</li>
-<li>
-<p><strong>Kube-controller manager</strong></p>
-<p>Runs a set of controllers that govern the state of the cluster‍</p>
-</li>
-<li>
-<p><strong>Kubelet</strong> </p>
-<p>An agent that runs on each worker node to communicate with the API server, it’s responsible for the deployment of containerized workloads in pods.‍</p>
-</li>
-<li>
-<p><strong>Kube-proxy</strong></p>
-<p>Maintains network rules that allow communication between pods and services, both internal and external to the cluster.</p>
-</li>
-</ol>
-<h2 id="get-started">Get Started</h2>
-<h2 id="install-kind">Install <code>Kind</code></h2>
-<p><code>curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
-  chmod +x ./kind
-  mv ./kind /usr/local/bin
-  which kind
-  kind version</code></p>
-<h2 id="install-kubectl">Install <code>kubectl</code></h2>
-<pre><code> curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
- chmod +x kubectl
- mv ./kubectl /usr/local/bin/kubectl
- kubectl version --client
 </code></pre>
-<h2 id="create-kind-cluster">Create <code>Kind Cluster</code></h2>
-<p><code>kind create cluster</code></p>
-<h2 id="install-metrics-server-kubectl-top">Install Metrics Server (<code>kubectl top</code>)</h2>
-<p>Issue #1 :: Kubernetes metrics-server Error – Readiness probe failed: HTTP probe failed with statuscode</p>
-<p>Solution:</p>
-<ul>
-<li>Download https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml</li>
-<li>Modify and add "- --kubelet-insecure-tls" in deployment.spec.template.spec.containers.args</li>
-<li>kubectl apply -f components.yaml</li>
-<li>kubectl top nodes</li>
-<li>kubectl top  pod kube-proxy-5p7gr -n=kube-system</li>
-</ul>
-<h3 id="create-deployment-manifest">Create Deployment Manifest</h3>
-<pre><code>apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    app: nginx-test
-  name: nginx-test
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx-test
-  template:
-    metadata:
-      labels:
-        app: nginx-test
-    spec:
-      containers:
-      - image: nginx
-        name: nginx-test
-        ports:
-          - containerPort: 80
-            name: http
-            protocol: TCP
+<h2 id="install-prometheus">Install Prometheus</h2>
+<pre><code>
+helm upgrade --install monitoring prometheus-community/prometheus --set persistence.enabled=true,persistence.size=8Gi --namespace monitoring
+
 </code></pre>
-<h3 id="create-service-manifest">Create Service Manifest</h3>
+<h2 id="logging">Logging</h2>
+<h3 id="add-helm-repository_1">Add Helm Repository</h3>
+<pre><code>helm repo add grafana https://grafana.github.io/helm-charts
+
+</code></pre>
+<h3 id="install-loki-stack">Install Loki Stack</h3>
+<pre><code>helm install loki grafana/loki-stack -n monitoring
+
+</code></pre>
+<h2 id="observablity">Observablity</h2>
+<h3 id="install-grafana-dashbaord">Install Grafana Dashbaord</h3>
+<pre><code>
+helm install grafana grafana/grafana --namespace monitoring --set persistence.enabled=true,persistence.size=1Gi
+
+</code></pre>
+<h2 id="alerting">Alerting</h2>
+<h3 id="add-gchat-alert-repository">Add gChat Alert Repository</h3>
+<pre><code>helm repo add julb https://charts.julb.me
+
+</code></pre>
+<h3 id="install-gchat-alert">Install gChat Alert</h3>
+<pre><code>
+helm install alert-manager julb/alertmanager-gchat-integration --namespace monitoring
+
+</code></pre>
+<h3 id="step-2">Step 2:</h3>
+<p>Verify if all the pods are running.</p>
+<p><code>kubectl get pods -n monitoring</code></p>
+<h4 id="step-3">Step 3:</h4>
+<p>Verify service available.</p>
+<p><code>kubectl get svc -n monitoring</code></p>
+<h4 id="step-4">Step 4:</h4>
+<p>Update configmap of prometheus alert-manager with the webhook url of gchat.</p>
 <pre><code>apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-test
-spec:
-  ports:
-  - port: 80
-  selector:
-    app: nginx-test
+data:
+  alertmanager.yml: |
+    global: {}
+    receivers:
+        webhook_configs:
+        - url: 'http://&lt;GCHAT_SERVICE-NAME&gt;:&lt;SERVICE_PORT&gt;/alerts?room=&lt;Google_Room_Name&gt;' ```
 </code></pre>
-<h3 id="install-metallb">Install MetalLB</h3>
-<p>kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.5/config/manifests/metallb-native.yaml</p>
-<h3 id="view-subnet-mask">View subnet-mask</h3>
-<p><code>docker inspect &lt;container_name&gt;</code></p>
-<h3 id="create-meatllb-manifest">Create MeatlLB manifest</h3>
-<pre><code>---
-
-apiVersion: metallb.io/v1beta1
-kind: L2Advertisement
-metadata:
-  name: empty
-  namespace: metallb-system
----
-apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
-metadata:
-  name: example
-  namespace: metallb-system
-spec:
-  addresses:
-  - 172.19.254.200-172.19.254.250  #chage first 2 numbers as per subnet mask.
-</code></pre>
-<h2 id="install-nginx-controller">Install Nginx-controller</h2>
-<p>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.1/deploy/static/provider/cloud/deploy.yaml</p>
-<h3 id="to-add-hosts-on-etchosts">To add hosts on etc/hosts</h3>
-<p><code>sudo nano /etc/hosts</code></p>
-<h3 id="create-ingress-manifest">Create Ingress Manifest</h3>
-<pre><code>apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  name: myhost
-spec:
-  rules:
-  - host: myhost.example.com
-    http:
-      paths:
-      - backend:
-          service:
-            name: nginx-test  # change as per service name
-            port:
-              number: 80 # change as per service port
-        path: /
-        pathType: ImplementationSpecific
-</code></pre>
+<h1 id="references">References</h1>
+<p>https://prometheus.io/docs/alerting/latest/configuration/#webhook_config
+https://stackoverflow.com/questions/66333868/send-notification-from-prometheus-alertmanager-to-google-chat-room/66337152#66337152
+https://github.com/mr-karan/calert</p>
 
 
 
@@ -1019,7 +904,7 @@ spec:
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome to Sugam Workspace">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kubernetes">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1029,20 +914,20 @@ spec:
                 Previous
               </span>
               <div class="md-ellipsis">
-                Welcome to Sugam Workspace
+                Kubernetes
               </div>
             </div>
           </a>
         
         
           
-          <a href="prometheus/" class="md-footer__link md-footer__link--next" aria-label="Next: Monitoring">
+          <a href="../logging/" class="md-footer__link md-footer__link--next" aria-label="Next: Logging">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Monitoring
+                Logging
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1101,10 +986,10 @@ spec:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.instant.prefetch", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.instant.prefetch", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
