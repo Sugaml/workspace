@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Monitoring - Sugam Workspace</title>
+        <title>Kubernetes Troubleshooting - Sugam Workspace</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -38,13 +38,13 @@
                                 <a href=".." class="nav-link">Welcome to Sugam Workspace</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../kubernetes/" class="nav-link">Kubernetes Troubleshooting</a>
+                                <a href="./" class="nav-link active" aria-current="page">Kubernetes Troubleshooting</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../logging/" class="nav-link">Loogging</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Monitoring</a>
+                                <a href="../prometheus/" class="nav-link">Monitoring</a>
                             </li>
                         </ul>
 
@@ -55,12 +55,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../logging/" class="nav-link">
+                                <a rel="prev" href=".." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../logging/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -82,33 +82,40 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#monitoring" class="nav-link">Monitoring</a>
+            <li class="nav-item" data-bs-level="1"><a href="#kubernetes-troubleshooting" class="nav-link">Kubernetes Troubleshooting</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#add-helm-repository" class="nav-link">Add Helm Repository</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#install-prometheus" class="nav-link">Install Prometheus</a>
+            <li class="nav-item" data-bs-level="2"><a href="#inroduction" class="nav-link">Inroduction</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#logging" class="nav-link">Logging</a>
+            <li class="nav-item" data-bs-level="2"><a href="#kubernetes-cluster-architecture" class="nav-link">Kubernetes Cluster Architecture</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#observablity" class="nav-link">Observablity</a>
+            <li class="nav-item" data-bs-level="2"><a href="#get-started" class="nav-link">Get Started</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#alerting" class="nav-link">Alerting</a>
+            <li class="nav-item" data-bs-level="2"><a href="#install-kind" class="nav-link">Install Kind</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#install-kubectl" class="nav-link">Install kubectl</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#references" class="nav-link">References</a>
+            <li class="nav-item" data-bs-level="2"><a href="#create-kind-cluster" class="nav-link">Create Kind Cluster</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#install-metrics-server-kubectl-top" class="nav-link">Install Metrics Server (kubectl top)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#install-nginx-controller" class="nav-link">Install Nginx-controller</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -116,63 +123,166 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="monitoring">Monitoring</h1>
-<h2 id="add-helm-repository">Add Helm Repository</h2>
-<pre><code>
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
+<h1 id="kubernetes-troubleshooting">Kubernetes Troubleshooting</h1>
+<h2 id="inroduction">Inroduction</h2>
+<p>Kubernetes troubleshooting is the process of identifying, diagnosing, and resolving issues in kubernetes cluster, nodes, pods, or containers.</p>
+<p><img alt="Kubernetes Architecture" src="./images/architecture.png" /> </p>
+<object data="http://yoursite.com/the.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="http://yoursite.com/the.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
 
+<h2 id="kubernetes-cluster-architecture">Kubernetes Cluster Architecture</h2>
+<p><img alt="Kubernetes Architecture" src="./images/architecture.png" /> </p>
+<p>Each Kubernetes cluster is composed of:</p>
+<ol>
+<li>
+<p><strong>Nodes</strong></p>
+<p>Represent a physical or virtual machine with the container runtime to support one or more containers. Nodes in an operating cluster can be categorized into:
+* <strong>Master node</strong></p>
+<p>Hosts the cluster’s control plane and is responsible for scheduling workloads, scaling, and managing the cluster state. Each cluster must have at least one master node; however, a typical choice is to provision two or more master nodes for redundancy.</p>
+<ul>
+<li><strong>Worker node</strong></li>
+</ul>
+<p>Hosts workloads in containers and performs the duties assigned to it by the master node.‍</p>
+</li>
+<li>
+<p><strong>Control plane</strong></p>
+<p>Composed of a number of cluster components, it’s responsible for controlling the cluster to achieve a desired state.‍</p>
+</li>
+<li>
+<p><strong>Kube-API server</strong></p>
+<p>The front-end server that manages all external communication with the cluster.‍</p>
+</li>
+<li>
+<p><strong>Etcd</strong></p>
+<p>The key value database that stores cluster state and data.‍</p>
+</li>
+<li>
+<p><strong>Kube-scheduler</strong></p>
+<p>Uses etcd event data to schedule workloads on worker nodes.‍</p>
+</li>
+<li>
+<p><strong>Kube-controller manager</strong></p>
+<p>Runs a set of controllers that govern the state of the cluster‍</p>
+</li>
+<li>
+<p><strong>Kubelet</strong> </p>
+<p>An agent that runs on each worker node to communicate with the API server, it’s responsible for the deployment of containerized workloads in pods.‍</p>
+</li>
+<li>
+<p><strong>Kube-proxy</strong></p>
+<p>Maintains network rules that allow communication between pods and services, both internal and external to the cluster.</p>
+</li>
+</ol>
+<h2 id="get-started">Get Started</h2>
+<h2 id="install-kind">Install <code>Kind</code></h2>
+<p><code>curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
+  chmod +x ./kind
+  mv ./kind /usr/local/bin
+  which kind
+  kind version</code></p>
+<h2 id="install-kubectl">Install <code>kubectl</code></h2>
+<pre><code> curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+ chmod +x kubectl
+ mv ./kubectl /usr/local/bin/kubectl
+ kubectl version --client
 </code></pre>
-<h2 id="install-prometheus">Install Prometheus</h2>
-<pre><code>
-helm upgrade --install monitoring prometheus-community/prometheus --set persistence.enabled=true,persistence.size=8Gi --namespace monitoring
-
+<h2 id="create-kind-cluster">Create <code>Kind Cluster</code></h2>
+<p><code>kind create cluster</code></p>
+<h2 id="install-metrics-server-kubectl-top">Install Metrics Server (<code>kubectl top</code>)</h2>
+<p>Issue #1 :: Kubernetes metrics-server Error – Readiness probe failed: HTTP probe failed with statuscode</p>
+<p>Solution:</p>
+<ul>
+<li>Download https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml</li>
+<li>Modify and add "- --kubelet-insecure-tls" in deployment.spec.template.spec.containers.args</li>
+<li>kubectl apply -f components.yaml</li>
+<li>kubectl top nodes</li>
+<li>kubectl top  pod kube-proxy-5p7gr -n=kube-system</li>
+</ul>
+<h3 id="create-deployment-manifest">Create Deployment Manifest</h3>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-test
+  name: nginx-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-test
+  template:
+    metadata:
+      labels:
+        app: nginx-test
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-test
+        ports:
+          - containerPort: 80
+            name: http
+            protocol: TCP
 </code></pre>
-<h2 id="logging">Logging</h2>
-<h3 id="add-helm-repository_1">Add Helm Repository</h3>
-<pre><code>helm repo add grafana https://grafana.github.io/helm-charts
-
-</code></pre>
-<h3 id="install-loki-stack">Install Loki Stack</h3>
-<pre><code>helm install loki grafana/loki-stack -n monitoring
-
-</code></pre>
-<h2 id="observablity">Observablity</h2>
-<h3 id="install-grafana-dashbaord">Install Grafana Dashbaord</h3>
-<pre><code>
-helm install grafana grafana/grafana --namespace monitoring --set persistence.enabled=true,persistence.size=1Gi
-
-</code></pre>
-<h2 id="alerting">Alerting</h2>
-<h3 id="add-gchat-alert-repository">Add gChat Alert Repository</h3>
-<pre><code>helm repo add julb https://charts.julb.me
-
-</code></pre>
-<h3 id="install-gchat-alert">Install gChat Alert</h3>
-<pre><code>
-helm install alert-manager julb/alertmanager-gchat-integration --namespace monitoring
-
-</code></pre>
-<h3 id="step-2">Step 2:</h3>
-<p>Verify if all the pods are running.</p>
-<p><code>kubectl get pods -n monitoring</code></p>
-<h4 id="step-3">Step 3:</h4>
-<p>Verify service available.</p>
-<p><code>kubectl get svc -n monitoring</code></p>
-<h4 id="step-4">Step 4:</h4>
-<p>Update configmap of prometheus alert-manager with the webhook url of gchat.</p>
+<h3 id="create-service-manifest">Create Service Manifest</h3>
 <pre><code>apiVersion: v1
-data:
-  alertmanager.yml: |
-    global: {}
-    receivers:
-        webhook_configs:
-        - url: 'http://&lt;GCHAT_SERVICE-NAME&gt;:&lt;SERVICE_PORT&gt;/alerts?room=&lt;Google_Room_Name&gt;' ```
+kind: Service
+metadata:
+  name: nginx-test
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: nginx-test
 </code></pre>
-<h1 id="references">References</h1>
-<p>https://prometheus.io/docs/alerting/latest/configuration/#webhook_config
-https://stackoverflow.com/questions/66333868/send-notification-from-prometheus-alertmanager-to-google-chat-room/66337152#66337152
-https://github.com/mr-karan/calert</p></div>
+<h3 id="install-metallb">Install MetalLB</h3>
+<p>kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.5/config/manifests/metallb-native.yaml</p>
+<h3 id="view-subnet-mask">View subnet-mask</h3>
+<p><code>docker inspect &lt;container_name&gt;</code></p>
+<h3 id="create-meatllb-manifest">Create MeatlLB manifest</h3>
+<pre><code>---
+
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: empty
+  namespace: metallb-system
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: example
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.19.254.200-172.19.254.250  #chage first 2 numbers as per subnet mask.
+</code></pre>
+<h2 id="install-nginx-controller">Install Nginx-controller</h2>
+<p>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.1/deploy/static/provider/cloud/deploy.yaml</p>
+<h3 id="to-add-hosts-on-etchosts">To add hosts on etc/hosts</h3>
+<p><code>sudo nano /etc/hosts</code></p>
+<h3 id="create-ingress-manifest">Create Ingress Manifest</h3>
+<pre><code>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: myhost
+spec:
+  rules:
+  - host: myhost.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: nginx-test  # change as per service name
+            port:
+              number: 80 # change as per service port
+        path: /
+        pathType: ImplementationSpecific
+</code></pre></div>
             </div>
         </div>
 

@@ -4,9 +4,9 @@
 
 ## Project Layout
 
-    mkdocs.yml    # The configuration file.
+    mkdocs.yml
     docs/
-        index.md  # The documentation homepage.
+        index.md
+        kubernetes.md
         prometheus.md
         logging.md
-        ...       # Other markdown pages, images and other files.
