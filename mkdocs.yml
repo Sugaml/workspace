@@ -17,6 +17,7 @@ nav:
       - Kubernetes: kubernetes/index.md
       - Monitoring: kubernetes/prometheus.md
       - Logging: kubernetes/logging.md
+      - Nginx: kubernetes/nginx.md
       - JMeter: jmeter/index.md
 extra_css:
   - stylesheets/style.css
