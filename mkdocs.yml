@@ -24,6 +24,9 @@ extra_css:
 # Configuration
 theme:
   name: material
+  icon:
+    logo: logo
+  logo: /assets/logo.svg
   features:
     - search.suggest
     - announce.dismiss
@@ -59,9 +62,6 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/logo.png
-  icon:
-    logo: logo
-  logo: assets/logo-inverse.svg
 
 extra:
   generator: false
@@ -82,4 +82,4 @@ hljs_languages:
   - yaml
 
 # Copyright
-copyright: Copyright © 2023 Product of BabulalT. All Right Reserved.
+copyright: Copyright © 2025 Product of BabulalT. All Right Reserved.
