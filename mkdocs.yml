@@ -19,6 +19,10 @@ nav:
       - Logging: kubernetes/logging.md
       - Nginx: kubernetes/nginx.md
       - JMeter: jmeter/index.md
+      - Backup: backup/index.md
+      - Security: security/index.md
+      - Jenkins: jenkins/index.md
+
 extra_css:
   - stylesheets/style.css
 # Configuration
