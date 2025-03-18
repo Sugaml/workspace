@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="100%" height="100%" fill="blue" />
+  <path d="M50 100c0-20 20-40 40-40 10 0 20 5 30 10 10-10 30-10 40 0 10 10 10 30 0 40h-110z" fill="#87CEEB" />
+  <text x="50" y="150" fill="white" font-size="20" font-family="Arial">Workspace</text>
+</svg>
