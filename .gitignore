@@ -3,3 +3,4 @@ data
 .terraform
 terraform.tfstate
 terraform.tfstate.backup
+*.pem
