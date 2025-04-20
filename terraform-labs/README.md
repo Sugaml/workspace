@@ -14,6 +14,7 @@
 ==> Utilize external stores (Vault, AWS Secret Manager), ensure encryption, and mark outputs as sensative.
 
 ## Project structure
+```structure
 terraform/
 │── modules/
 │   ├── vpc/
@@ -26,3 +27,4 @@ terraform/
 │   ├── prod/
 │   │   ├── terragrunt.hcl
 │── terragrunt.hcl
+```
