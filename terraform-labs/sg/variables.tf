@@ -9,6 +9,6 @@ variable "vpc_id" {
 }
 
 variable "enable_aws_lb" {
-  type = bool
+    type = bool
     default = false
 }
