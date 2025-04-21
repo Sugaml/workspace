@@ -13,7 +13,7 @@ free -> show memory and swap usage
 du -> show directory space usage
 du -sh -> display readable size in GB
 df -> show disk usage
-uname -a -> show karnel config
+uname -a -> show kernel config
 ```
 
 ## Processes 
